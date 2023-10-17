@@ -20,3 +20,37 @@ mkdir src
 nano src/schema.js
 ```
 
+- Now to use database run command **npx prisma init**
+
+    - This command will create a folder `prisma` that have schem.prisma file where we can specify the database which we like to use and the its credentials.
+
+- Define the database name (used mysql) and url ( used localhost) 
+- `DATABASE_URL = mysql://root:root@127.0.0.1:3306/inventory`
+- Cross-check the localhost url and port.
+- Define models for Category and Tag
+- Then run the command **$ npx prisma migrate dev --name create-categories-and-tags-table**
+
+- Updated the schema.prisma ( db models);
+- run **$ npx prisma migrate dev --name create-products-table**
+
+##### Working with the Prisma client
+- to access data and store data in db install prisma-client
+- run `npm i @prisma/client`
+
+```
+**Migrations not required for MongoDB as it an oriented document database.**
+```
+
+##### Seeding the database
+- create a seed.ts in prisma folder and write code to add some default categories/tags 
+
+- Update package.json
+    ```
+    "prisma":{
+        "seed":"ts-node prisma/seed.ts"
+    }
+    ```
+- Install: `npm i ts-node`
+- RUN: `npx prisma db seed`
+- CHECK: check db to see the added data.
+

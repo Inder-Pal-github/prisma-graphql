@@ -5,13 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node src/server.js"
+    "start": "node src/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^5.4.2",
     "apollo-server": "^3.12.1",
-    "graphql": "^16.8.1"
+    "graphql": "^16.8.1",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "prisma": "^5.4.2"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   }
 }
